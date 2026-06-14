@@ -22,9 +22,9 @@
 | Dino Depot | Dino-Verwaltung und Lagerung |
 | A Simple Performance Mod (60 FPS) | Performance-Optimierung für flüssigeres Gameplay |
 | Tribute Table | Ermöglicht das Einlösen von Tribute-Items |
-| Der Dino Finder | Hilft beim Auffinden eigener Dinos auf der Map |
-| TG Stacking Mod 1000-50 | Erhöht Stack-Grössen auf 1000 (Gewicht ×50) |
-| Crash Protector | Schützt Strukturen vor Abstürzen |
+| Der Dino Finder | Hilft beim Auffinden aller Dinos auf der Map |
+| TG Stacking Mod 1000-50 | Erhöht Stack-Grössen auf 1000 (Gewicht ist um 50% reduziert) |
+| Crash Protector | Schützt Spieler wenn sie crashen |
 | Upgrade Station | Ermöglicht das Upgraden von Items auf höhere Qualitätsstufen |
 
 ---
@@ -65,8 +65,8 @@ Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser d
 ### Weiß — Starter Kit
 | Variante | Inhalt | Qualität |
 |----------|--------|----------|
-| Normal | Flak-Set + 10 Bolas + Metallpickel + Metallaxt | Primitiv → Lila |
-| Double | Alles aus Normal + Longneck + 25 Tranq Darts | Primitiv → Lila |
+| Normal | Flak-Set + 10 Bolas + Metallpickel + Metallaxt + 10 Med Brews | Primitiv → Lila |
+| Double | Alles aus Normal + Crossbow + 25 Tranq Arrows | Primitiv → Lila |
 
 ### Grün — Ressourcen
 | Variante | Inhalt |
@@ -77,8 +77,8 @@ Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser d
 ### Blau — Waffen
 | Variante | Inhalt | Qualität |
 |----------|--------|----------|
-| Normal | Fabrizierter Sniper + 100 Munition | Lila → Meisterwerk |
-| Double | Alles aus Normal + 50% Chance: Fab Sniper Blueprint | Lila → Meisterwerk |
+| Normal | Fabrizierter Sniper + 50 ADV Sniper Bullets | Lila → Meisterwerk |
+| Double | Alles aus Normal + 50% Chance: Fab Sniper Blueprint oder Crossbow bp oder Shotgun bp oder Compound Bow bp| Lila → Meisterwerk |
 
 ### Lila — Bessere Rüstung
 | Variante | Inhalt | Qualität |
@@ -86,8 +86,19 @@ Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser d
 | Normal | Pike + Sichel + Flak-Set + 50% Chance: BP (Sniper / Pike / Sichel) | Meisterwerk → Aufgestiegen |
 | Double | Alles aus Normal + zusätzlich 50% Chance: Fab Sniper Blueprint | Meisterwerk → Aufgestiegen |
 
-### Gelb & Rot
-> Noch nicht konfiguriert — wird zu einem späteren Zeitpunkt angepasst.
+### Gelb — Strukturen
+| Variante | Inhalt | Qualität |
+|----------|--------|----------|
+| Normal | 10 Metal Foundations + 15 Metal Walls + 10 Metal Ceilings + Dino Gate + Dino Door | gibt es keine |
+| Double | 20 Metal Foundations + 30 Metal Walls + 20 Metal Ceilings + Dino Gate + Dino Door + Industrial Forge | gibt es keine |
+
+### Rot — OP Waffen 
+| Variante | Inhalt | Qualität |
+|----------|--------|----------|
+| Normal | Fabricated Sniper oder Crossbow + 25 ADV Sniper Bullets + 25 Tranq Arrows + 25 Flame Arrows + 25 Med Brews | Meisterwerk → Aufgestiegen |
+| Double | Alles doppelt bis dreifach | Meisterwerk → Aufgestiegen |
+
+
 
 ---
 
@@ -101,4 +112,4 @@ EnableCheats <Passwort>
 | Command | Funktion |
 |---------|----------|
 | `cheat DestroyWildDinos` | Alle wilden Dinos töten (spawnen danach neu) |
-| `cheat DestroyAll SupplyCrate_Level03_C` | Alle weissen Drops löschen und neu spawnen |
+| `cheat DestroyAll SupplyCrate_Level03_C` | Alle weißen Drops löschen und neu spawnen |
