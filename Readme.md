@@ -10,6 +10,7 @@
 2. [Spieler & Dino Stats](#2-spieler--dino-stats)
 3. [Loot Drop Übersicht](#3-loot-drop-übersicht)
 4. [Admin Commands](#4-admin-commands)
+5. [Server Einstellungen](#5-server-einstellungen)
 
 ---
 
@@ -83,14 +84,14 @@ Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser d
 ### Lila — Bessere Rüstung
 | Variante | Inhalt | Qualität |
 |----------|--------|----------|
-| Normal | Pike + Sichel + Flak-Set + 50% Chance: BP (Sniper / Pike / Sichel) | Meisterwerk → Aufgestiegen |
-| Double | Alles aus Normal + zusätzlich 50% Chance: Fab Sniper Blueprint | Meisterwerk → Aufgestiegen |
+| Normal | Pike + Sichel + Flak-Set + 50% Chance: BP (Sniper / Pike / Sichel) + 50% Chance: Crossbow BP | Meisterwerk → Aufgestiegen |
+| Double | Alles aus Normal + 50% Chance: Fab Sniper BP + 50% Chance: Crossbow BP (unabhängig voneinander) | Meisterwerk → Aufgestiegen |
 
 ### Gelb — Strukturen
 | Variante | Inhalt | Qualität |
 |----------|--------|----------|
-| Normal | 10 Metal Foundations + 15 Metal Walls + 10 Metal Ceilings + Dino Gate + Dino Door | gibt es keine |
-| Double | 20 Metal Foundations + 30 Metal Walls + 20 Metal Ceilings + Dino Gate + Dino Door + Industrial Forge | gibt es keine |
+| Normal | 10 Metal Foundations + 15 Metal Walls + 10 Metal Ceilings + Dino Gate + Dino Door + 5 Tek Dedicated Storage | gibt es keine |
+| Double | 20 Metal Foundations + 30 Metal Walls + 20 Metal Ceilings + Dino Gate + Dino Door + zufällig Industrial Forge oder Industrial Grinder + 10 Tek Dedicated Storage | gibt es keine |
 
 ### Rot — OP Waffen 
 | Variante | Inhalt | Qualität |
@@ -111,5 +112,71 @@ EnableCheats <Passwort>
 
 | Command | Funktion |
 |---------|----------|
-| `cheat DestroyWildDinos` | Alle wilden Dinos töten (spawnen danach neu) |
-| `cheat DestroyAll SupplyCrate_Level03_C` | Alle weißen Drops löschen und neu spawnen |
+| `admincheat DestroyWildDinos` | Alle wilden Dinos töten (spawnen danach neu) |
+
+---
+
+## 5. Server Einstellungen
+
+### Spieler Stats — pro Level-Up Multiplikator
+
+| Attribut | Multiplikator | Hinweis |
+|----------|--------------|---------|
+| Health | ×2.0 | |
+| Stamina | ×2.0 | |
+| Weight | ×15.0 | sehr hoch — Inventar kaum ein Problem |
+| Melee Damage | ×2.0 | |
+| Movement Speed | ×2.5 | Speed-Leveling aktiv |
+| Temp. Fortitude | ×5.0 | |
+| Crafting Speed | ×50.0 | |
+| Oxygen / Food / Water | ×1.0 | Standard |
+
+### Dino Stats — gezähmte Dinos pro Level-Up
+
+| Attribut | Multiplikator | Hinweis |
+|----------|--------------|---------|
+| Health | ×1.0 | Standard |
+| Stamina | ×2.0 | |
+| Weight | ×20.0 | extrem hoch — Lastdinos tragen enorm viel |
+| Alle anderen | ×1.0 | Standard |
+
+> Wilde Dinos bleiben auf Standard (×1.0) — maximale Schwierigkeit aktiv.
+
+### Breeding
+
+| Einstellung | Wert | Bedeutung |
+|-------------|------|-----------|
+| Paarungsintervall | ×0.05 | Dauert in der regel 1-2 Stunden |
+| Ei schlüpfen | ×40 | sehr schnell |
+| Baby aufwachsen | ×40 | sehr schnell |
+| Imprint-Menge | ×10 | 100 % Imprint in wenigen Cuddles |
+| Ei-Legeintervall | ×0.1 | Eier kommen sehr häufig |
+
+### XP Multiplikatoren
+
+| Quelle | Multiplikator |
+|--------|--------------|
+| Generic (allgemein) | ×10 |
+| Craft | ×6 |
+| Cave Kill | ×4 |
+| Boss Kill | ×5 |
+| Alpha Kill | ×2 |
+| Wild Kill | ×3 |
+| Kill (allgemein) | ×2 |
+| Harvest | ×2 |
+
+### Welt & Gameplay
+
+| Einstellung | Wert | Bedeutung |
+|-------------|------|-----------|
+| Loot-Qualität Drops | ×10 | sehr hohe Item-Qualität |
+| Loot-Qualität Fischen | ×4 | |
+| Crafting Skill Bonus | ×25 | Handwerk lohnt sich stark |
+| Custom Recipe Skill | ×10 | |
+| Struktur-Schaden (PvP) | ×6 | Raiding geht deutlich schneller |
+| Turret-Schaden | ×2.5 | |
+| Respawn Interval | aktiv | erhöht sich mit jedem Tod |
+| Flyer Speed-Leveling | deaktiviert | |
+| Struktur-Kollision | deaktiviert | freies Bauen ohne Clip-Fehler |
+| Corpse Locator | aktiv | Leiche auf der Karte sichtbar |
+| Unlimited Respecs | aktiv | Engram-Punkte jederzeit zurücksetzen |
