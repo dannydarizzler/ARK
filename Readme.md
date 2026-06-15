@@ -124,9 +124,9 @@ EnableCheats <Passwort>
 |----------|--------------|---------|
 | Health | ×2.0 | |
 | Stamina | ×2.0 | |
-| Weight | ×15.0 | sehr hoch — Inventar kaum ein Problem |
+| Weight | ×10.0 | sehr hoch — Inventar kaum ein Problem |
 | Melee Damage | ×2.0 | |
-| Movement Speed | ×2.5 | Speed-Leveling aktiv |
+| Movement Speed | ×2.0 | Speed-Leveling aktiv |
 | Temp. Fortitude | ×5.0 | |
 | Crafting Speed | ×50.0 | |
 | Oxygen / Food / Water | ×1.0 | Standard |
@@ -137,7 +137,7 @@ EnableCheats <Passwort>
 |----------|--------------|---------|
 | Health | ×1.0 | Standard |
 | Stamina | ×2.0 | |
-| Weight | ×20.0 | extrem hoch — Lastdinos tragen enorm viel |
+| Weight | ×10.0 | Lastdinos tragen viel |
 | Alle anderen | ×1.0 | Standard |
 
 > Wilde Dinos bleiben auf Standard (×1.0) — maximale Schwierigkeit aktiv.
@@ -146,29 +146,23 @@ EnableCheats <Passwort>
 
 | Einstellung | Wert | Bedeutung |
 |-------------|------|-----------|
-| Paarungsintervall | ×0.05 | Dauert in der regel 1-2 Stunden |
+| Paarungsintervall | ×0.1 | sehr schnell |
 | Ei schlüpfen | ×40 | sehr schnell |
 | Baby aufwachsen | ×40 | sehr schnell |
 | Imprint-Menge | ×10 | 100 % Imprint in wenigen Cuddles |
-| Ei-Legeintervall | ×0.1 | Eier kommen sehr häufig |
+| Ei-Legeintervall | ×0.25 | Eier kommen häufig |
 
 ### XP Multiplikatoren
 
 | Quelle | Multiplikator |
 |--------|--------------|
-| Generic (allgemein) | ×10 |
-| Craft | ×6 |
-| Cave Kill | ×4 |
-| Boss Kill | ×5 |
-| Alpha Kill | ×2 |
-| Wild Kill | ×3 |
-| Kill (allgemein) | ×2 |
-| Harvest | ×2 |
+| Alle XP-Quellen | ×3 |
 
 ### Welt & Gameplay
 
 | Einstellung | Wert | Bedeutung |
 |-------------|------|-----------|
+| Harvest-Menge | ×5 | |
 | Loot-Qualität Drops | ×10 | sehr hohe Item-Qualität |
 | Loot-Qualität Fischen | ×4 | |
 | Crafting Skill Bonus | ×25 | Handwerk lohnt sich stark |
