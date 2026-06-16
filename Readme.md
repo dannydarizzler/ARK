@@ -64,13 +64,13 @@ PerLevelStatsMultiplier_DinoWild[ID]=Wert
 
 Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser der Inhalt. Jede Farbe hat eine Normal- und eine Double-Variante (mit Ring). Flak-Rüstung gibt es **nur als Blueprint** (kein fertiges Item). Die Waffen-/Tool-Slots in Blau, Gelb und Rot ziehen **zufällig 1–5 Items** aus einem Pool — nicht alles ist garantiert.
 
-> **BP-System (Blau/Gelb/Rot):** Jedes Item im Gear-Pool hat **85% Chance als fertiger Gegenstand** und **15% Chance als Blueprint**. Pro Drop werden **3–10 Items** zufällig aus dem Pool gezogen (Double: 5–10).
+> **BP-System (Blau/Gelb/Rot):** Jedes Item im Gear-Pool hat **85% Chance als fertiger Gegenstand** und **15% Chance als Blueprint**. Pro Drop werden **1–5 Items** zufällig aus dem Pool gezogen.
 
 ### Weiß — Starter Kit (fix)
 | Variante | Inhalt | Qualität |
 |----------|--------|----------|
 | Normal | Hide Toxic Rüstung (5 Teile) + 10 Bolas + Metal Pick + Metal Hatchet + 10 Med Brews | Primitiv |
-| Double | Alles aus Normal + Crossbow + 25 Tranq Arrows + 1–3 Small XP Potions | Primitiv |
+| Double | Alles aus Normal + Crossbow + 20 Potent Tranq Arrows + 1–3 Small XP Potions | Primitiv |
 
 ### Grün — Ressourcen (fix)
 | Variante | Inhalt |
@@ -84,7 +84,7 @@ Garantiert: Potent/Alpha Tranq Arrows (15–35) · Alpha Health Potion (2–5) �
 **Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
 Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Flak Pants · Alpha Flak Boots · Alpha Pick · Alpha Hatchet · Alpha Sickle · Alpha Pike
 
-*Normal: 3–8 zufällige Items aus dem Pool · Double: 5–10 zufällige Items*
+*Normal & Double: 1–5 zufällige Items aus dem Pool*
 
 ### Lila — Strukturen (fix)
 | Variante | Inhalt |
@@ -98,7 +98,7 @@ Garantiert: Tranq Dart zufällig Elemental/Alpha/Potent (15–35) · Elemental A
 **Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
 Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike
 
-*Normal: 3–8 aus Pool (10 Items) · Double: 5–10 aus Pool (11 Items, + Fab Sniper Mastercraft) + Elemental Compound Bow Arrows garantiert*
+*Normal & Double: 1–5 aus Pool · Double-Pool hat 11 Items (+ Fab Sniper Mastercraft) + Elemental Compound Bow Arrows garantiert*
 
 ### Rot — Endgame Exclusives (Pool: 3–8 / 5–10 Items)
 Garantiert: Mythic/Primal ADV Sniper Bullets zufällig (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2)
@@ -106,7 +106,7 @@ Garantiert: Mythic/Primal ADV Sniper Bullets zufällig (8–25) · Max XP Potion
 **Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
 Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots
 
-*Normal: 3–8 aus Pool (11 Items) · Double: 5–10 aus Pool + Primal ADV Sniper Bullets garantiert*
+*Normal & Double: 1–5 aus Pool (11 Items) · Double: + Primal ADV Sniper Bullets garantiert*
 
 
 
