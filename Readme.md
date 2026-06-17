@@ -9,9 +9,11 @@
 1. [Aktive Mods](#1-aktive-mods)
 2. [Spieler & Dino Stats](#2-spieler--dino-stats)
 3. [Loot Drop Übersicht](#3-loot-drop-übersicht)
-4. [Admin Commands](#4-admin-commands)
-5. [Server Einstellungen](#5-server-einstellungen)
-6. [Klassen-Referenz](#6-klassen-referenz)
+4. [Armor Tiers](#4-armor-tiers)
+5. [Taming — Torpor Referenz](#5-taming--torpor-referenz)
+6. [Admin Commands](#6-admin-commands)
+7. [Server Einstellungen](#7-server-einstellungen)
+8. [Klassen-Referenz](#8-klassen-referenz)
 
 ---
 
@@ -112,7 +114,75 @@ Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Myt
 
 ---
 
-## 4. Admin Commands
+## 4. Armor Tiers
+
+Alle Primal Chaos Flak-Rüstungen fallen **ausschließlich als Blueprint** (kein fertiger Gegenstand).
+
+### Basisrüstung pro Teil
+
+| Tier | Basisrüstung |
+|------|-------------|
+| Alpha Flak | 500 |
+| Volcanic Flak | 1.000 |
+| Mythic Flak | 2.500 |
+| Legend Riot | 3.000 |
+
+### Mythic Flak — Boni (×4 auf jeweiligen Stat)
+
+| Teil | Bonus |
+|------|-------|
+| Helm | Food & Water |
+| Brustpanzer | Weight (Gewicht) |
+| Handschuhe | Crafting Speed |
+| Beinschutz | Stamina |
+| Stiefel | Fall Damage Reduction |
+
+### Legend Riot — Boni
+
+| Teil | Bonus |
+|------|-------|
+| Helm | ×4 Health |
+| Brustpanzer | ×4 Torpor Resistance |
+| Handschuhe | ×4 Melee Damage |
+| Beinschutz | ×4 Stamina |
+| Stiefel | +25% Movement Speed |
+
+---
+
+## 5. Taming — Torpor Referenz
+
+> Werte gemessen an einem Bronto bei 100 % Waffe — variieren je nach Dino.  
+> **Formel:** `Basis-Torpor × (Waffe % ÷ 100)`
+
+### ADV Sniper Bullets (Fabricated Sniper)
+
+| Typ | Torpor |
+|-----|--------|
+| Potent | 2.100 |
+| Alpha | 4.600 |
+| Elemental | 8.600 |
+| Mythic | 13.000 |
+| Primal | 20.800 |
+
+### Tranq Darts (Longneck)
+
+| Typ | Torpor |
+|-----|--------|
+| Potent | 1.900 |
+| Alpha | 3.800 |
+| Elemental | 7.400 |
+| Mythic | 11.300 |
+
+### Tranq Arrows (Crossbow)
+
+| Typ | Torpor |
+|-----|--------|
+| Potent | 640 |
+| Alpha | 1.200 |
+
+---
+
+## 6. Admin Commands
 
 Cheats müssen zuerst mit dem Passwort aktiviert werden:
 ```
@@ -125,7 +195,7 @@ EnableCheats <Passwort>
 
 ---
 
-## 5. Server Einstellungen
+## 7. Server Einstellungen
 
 ### Spieler Stats — pro Level-Up Multiplikator
 
@@ -186,7 +256,7 @@ EnableCheats <Passwort>
 
 ---
 
-## 6. Klassen-Referenz
+## 8. Klassen-Referenz
 
 Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der Game.ini.
 
