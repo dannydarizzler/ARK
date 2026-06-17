@@ -197,6 +197,22 @@ EnableCheats <Passwort>
 
 ## 7. Server Einstellungen
 
+### Engram Points pro Level
+
+Sanfte Kurve — frühe Level geben weniger, Endgame skaliert moderat. **Total bei Max-Level (105): 9.200 Punkte.**
+
+| Level | Punkte/Level | Kumulativ |
+|-------|-------------|-----------|
+| 1–10 | 30 | 300 |
+| 11–20 | 50 | 800 |
+| 21–50 | 60 | 2.600 |
+| 51–60 | 80 | 3.400 |
+| 61–70 | 100 | 4.400 |
+| 71–90 | 120 | 6.800 |
+| 91–100 | 150 | 8.300 |
+| 101–105 | 180 | 9.200 |
+
+
 ### Spieler Stats — pro Level-Up Multiplikator
 
 | Attribut | Multiplikator | Hinweis |
