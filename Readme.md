@@ -212,7 +212,7 @@ Sanfte Kurve — frühe Level geben weniger, Endgame skaliert moderat. **Total b
 | 91–100 | 150 | 8.300 |
 | 101–105 | 180 | 9.200 |
 
-
+test
 ### Spieler Stats — pro Level-Up Multiplikator
 
 | Attribut | Multiplikator | Hinweis |
