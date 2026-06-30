@@ -1,311 +1,310 @@
-# ARK: Survival Ascended — Server Dokumentation
+# ARK: Survival Ascended — Server Documentation
+**Patch V.2.0**
 
-> Dieses Dokument dient als Referenz für die Serverkonfiguration, aktive Mods, Stat-Erklärungen und die Inhalte der Loot Drops.
+> This document serves as a reference for the server configuration, active mods, stat explanations, and loot drop contents.
 
 ---
 
-## Inhaltsverzeichnis
+## Table of Contents
 
-1. [Aktive Mods](#1-aktive-mods)
-2. [Spieler & Dino Stats](#2-spieler--dino-stats)
-3. [Loot Drop Übersicht](#3-loot-drop-übersicht)
+1. [Active Mods](#1-active-mods)
+2. [Player & Dino Stats](#2-player--dino-stats)
+3. [Loot Drop Overview](#3-loot-drop-overview)
 4. [Armor Tiers](#4-armor-tiers)
-5. [Taming — Torpor Referenz](#5-taming--torpor-referenz)
+5. [Taming — Torpor Reference](#5-taming--torpor-reference)
 6. [Admin Commands](#6-admin-commands)
-7. [Server Einstellungen](#7-server-einstellungen)
-8. [Klassen-Referenz](#8-klassen-referenz)
+7. [Server Settings](#7-server-settings)
+8. [Class Reference](#8-class-reference)
 
 ---
 
-## 1. Aktive Mods
+## 1. Active Mods
 
-| Mod | Beschreibung |
+| Mod | Description |
 |-----|-------------|
-| ARK Primal Chaos | Overhaul-Mod — verändert Dinos, Gameplay und Schwierigkeitsgrad grundlegend |
-| Awesome Spyglass | Erweitertes Fernglas mit Stat-Anzeige für Dinos |
-| Dino Depot | Dino-Verwaltung und Lagerung |
-| A Simple Performance Mod (60 FPS) | Performance-Optimierung für flüssigeres Gameplay |
-| Tribute Table | Ermöglicht das Einlösen von Tribute-Items |
-| Der Dino Finder | Hilft beim Auffinden aller Dinos auf der Map |
-| TG Stacking Mod 1000-50 | Erhöht Stack-Grössen auf 1000 (Gewicht ist um 50% reduziert) |
-| Crash Protector | Schützt Spieler wenn sie crashen |
-| Upgrade Station | Ermöglicht das Upgraden von Items auf höhere Qualitätsstufen |
+| ARK Primal Chaos | Overhaul mod — fundamentally changes dinos, gameplay, and difficulty |
+| Awesome Spyglass | Extended spyglass with stat display for dinos |
+| Dino Depot | Dino management and storage |
+| A Simple Performance Mod (60 FPS) | Performance optimization for smoother gameplay |
+| Tribute Table | Allows redeeming tribute items |
+| Der Dino Finder | Helps locate all dinos on the map |
+| TG Stacking Mod 1000-50 | Increases stack sizes to 1000 (weight reduced by 50%) |
+| Crash Protector | Protects players from dinos and drowning when they crash |
+| Upgrade Station | Allows upgrading items to higher quality tiers |
 
 ---
 
-## 2. Spieler & Dino Stats
+## 2. Player & Dino Stats
 
-Die `PerLevelStatsMultiplier`-Einstellungen steuern, wie stark ein Stat pro Level-Up zunimmt. Sie gelten separat für Spieler, gezähmte Dinos und wilde Dinos.
+The `PerLevelStatsMultiplier` settings control how much a stat increases per level-up. They apply separately for players, tamed dinos, and wild dinos.
 
 ```
-PerLevelStatsMultiplier_Player[ID]=Wert
-PerLevelStatsMultiplier_DinoTamed[ID]=Wert
-PerLevelStatsMultiplier_DinoWild[ID]=Wert
+PerLevelStatsMultiplier_Player[ID]=Value
+PerLevelStatsMultiplier_DinoTamed[ID]=Value
+PerLevelStatsMultiplier_DinoWild[ID]=Value
 ```
 
-### Stat-Referenztabelle
+### Stat Reference Table
 
-| ID | Attribut | Standard |
-|----|----------|---------|
-| 0 | Health (Leben) | 1.0 |
-| 1 | Stamina (Ausdauer) | 1.0 |
-| 2 | Torpidity (Betäubung) | 1.0 |
-| 3 | Oxygen (Sauerstoff) | 1.0 |
-| 4 | Food (Nahrung) | 1.0 |
-| 5 | Water (Wasser) | 1.0 |
-| 6 | Temperature (Temperatur) | 0.0 — nicht verwendet |
-| 7 | Weight (Gewicht) | 1.0 |
-| 8 | Melee Damage | 0.0 — Basiswert, nicht erhöhbar |
-| 9 | Movement Speed | 0.0 — Basiswert, nicht erhöhbar |
-| 10 | Temperature Fortitude | 0.0 — Basiswert, nicht erhöhbar |
-| 11 | Crafting Speed | 0.0 — Basiswert, nicht erhöhbar |
+| ID | Attribute | Default |
+|----|-----------|---------|
+| 0 | Health | 1.0 |
+| 1 | Stamina | 1.0 |
+| 2 | Torpidity | 1.0 |
+| 3 | Oxygen | 1.0 |
+| 4 | Food | 1.0 |
+| 5 | Water | 1.0 |
+| 6 | Temperature | 0.0 — not used |
+| 7 | Weight | 1.0 |
+| 8 | Melee Damage | 0.0 — base value, not increasable |
+| 9 | Movement Speed | 0.0 — base value, not increasable |
+| 10 | Temperature Fortitude | 0.0 — base value, not increasable |
+| 11 | Crafting Speed | 0.0 — base value, not increasable |
 
 ---
 
-## 3. Loot Drop Übersicht
+## 3. Loot Drop Overview
 
-Die Drops sind progressiv aufgebaut — je höher die Drop-Farbe, desto besser der Inhalt. Jede Farbe hat eine Normal- und eine Double-Variante (mit Ring). Flak-Rüstung gibt es **nur als Blueprint** (kein fertiges Item). Die Waffen-/Tool-Slots in Blau, Gelb und Rot ziehen **zufällig 1–5 Items** aus einem Pool — nicht alles ist garantiert.
+Drops are structured progressively — the higher the drop color, the better the contents. Each color has a Normal and a Double variant (with ring). Flak armor is available **as Blueprint only** (no finished item). The weapon/tool slots in Blue, Yellow, and Red draw **1–5 random items** from a pool — not everything is guaranteed.
 
-> **BP-System (Blau/Gelb/Rot):** Jedes Item im Gear-Pool hat **85% Chance als fertiger Gegenstand** und **15% Chance als Blueprint**. Pro Drop werden **1–5 Items** zufällig aus dem Pool gezogen.
+> **BP System:** Blueprints can **only appear in Double drops**. Each gear item in a Double drop pool has a **20% chance to be a Blueprint** instead of a finished item. Normal drops contain **no blueprints**.
 
-### Weiß — Starter Kit (fix)
-| Variante | Inhalt | Qualität |
-|----------|--------|----------|
-| Normal | Hide Toxic Rüstung (5 Teile) + 10 Bolas + Metal Pick + Metal Hatchet + 10 Med Brews | Primitiv |
-| Double | Alles aus Normal + Crossbow + 20 Potent Tranq Arrows + 1–3 Small XP Potions | Primitiv |
+### White — Starter Kit (fixed)
+| Variant | Contents | Quality |
+|---------|----------|---------|
+| Normal | Toxic Hide Armor (5 pieces) + 10 Bolas + Metal Pick + Metal Hatchet + 10 Med Brews | Primitive |
+| Double | Everything from Normal + Crossbow + 20 Potent Tranq Arrows + 1–3 Small XP Potions | Primitive |
 
-### Grün — Ressourcen (fix)
-| Variante | Inhalt |
-|----------|--------|
-| Normal | 75–175× Polymer, Zement (Cementing Paste), Siliziumperlen, Öl |
-| Double | 125–250× Polymer, Zement, Siliziumperlen, Öl |
+### Green — Resources (fixed)
+| Variant | Contents |
+|---------|----------|
+| Normal | 75–175× Polymer, Cementing Paste, Silica Pearls, Oil |
+| Double | 125–250× Polymer, Cementing Paste, Silica Pearls, Oil |
 
-### Blau — Alpha Tier (Pool: 3–8 / 5–10 Items)
-Garantiert: Potent/Alpha Tranq Arrows (15–35) · Alpha Health Potion (2–5) · Medium XP Potion (2–5)
+### Blue — Alpha Tier (Pool: 1–5 / 3–7 Items)
+Guaranteed: Potent/Alpha Tranq Arrows (15–35) · Alpha Health Potion (2–5) · Medium XP Potion (2–5)
 
-**Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
+**Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
 Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Flak Pants · Alpha Flak Boots · Alpha Pick · Alpha Hatchet · Alpha Sickle · Alpha Pike
 
-*Normal & Double: 1–5 zufällige Items aus dem Pool*
+*Normal: 1–5 random items from pool (no BPs) · Double: 3–7 random items from pool (20% BP chance)*
 
-### Lila — Strukturen (fix)
-| Variante | Inhalt |
-|----------|--------|
+### Purple — Structures (fixed)
+| Variant | Contents |
+|---------|----------|
 | Normal | 10× Metal Foundation + 15× Metal Wall + 10× Metal Ceiling + Dino Gateway + Dino Gate + 3× Dedicated Storage |
 | Double | 20× Metal Foundation + 30× Metal Wall + 20× Metal Ceiling + Dino Gateway + Dino Gate + 5× Dedicated Storage |
 
-### Gelb — Volcanic Tier + Longneck (Pool: 3–8 / 5–10 Items)
-Garantiert: Tranq Dart zufällig Elemental/Alpha/Potent (15–35) · Elemental ADV Sniper Bullets (8–25) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
+### Yellow — Volcanic Tier + Longneck (Pool: 1–5 Items)
+Guaranteed: Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
 
-**Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
-Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike
+**Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
+Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Fab Sniper (Mastercraft)
 
-*Normal & Double: 1–5 aus Pool · Double-Pool hat 11 Items (+ Fab Sniper Mastercraft) + Elemental Compound Bow Arrows garantiert*
+*Normal: 1–5 from pool (no BPs) · Double: Guaranteed Elemental ADV Sniper Bullets (8–24) + 1–5 from pool (20% BP chance)*
 
-### Rot — Endgame Exclusives (Pool: 3–8 / 5–10 Items)
-Garantiert: Mythic/Primal ADV Sniper Bullets zufällig (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2)
+### Red — Endgame Exclusives (Pool: 1–5 Items)
+Guaranteed: Mythic/Primal ADV Sniper Bullets random (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2) · Primal Compound Bow Arrows (8–25)
 
-**Gear-Pool — jedes Item: 85% als Gegenstand / 15% als Blueprint:**
+**Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
 Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots
 
-*Normal & Double: 1–5 aus Pool (11 Items) · Double: + Primal ADV Sniper Bullets garantiert*
-
-
+*Normal: 1–5 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow Blueprint added to pool (always BP)*
 
 ---
 
 ## 4. Armor Tiers
 
-Alle Primal Chaos Flak-Rüstungen fallen **ausschließlich als Blueprint** (kein fertiger Gegenstand).
+All Primal Chaos flak armors drop **exclusively as Blueprints** (no finished item).
 
-### Basisrüstung pro Teil
+### Base Armor per Piece
 
-| Tier | Basisrüstung |
-|------|-------------|
+| Tier | Base Armor |
+|------|-----------|
 | Alpha Flak | 500 |
-| Volcanic Flak | 1.000 |
-| Mythic Flak | 2.500 |
-| Legend Riot | 3.000 |
+| Volcanic Flak | 1,000 |
+| Mythic Flak | 2,500 |
+| Legend Riot | 3,000 |
 
-### Mythic Flak — Boni (×4 auf jeweiligen Stat)
+### Mythic Flak — Bonuses (×4 on respective stat)
 
-| Teil | Bonus |
-|------|-------|
+| Piece | Bonus |
+|-------|-------|
 | Helm | Food & Water |
-| Brustpanzer | Weight (Gewicht) |
-| Handschuhe | Crafting Speed |
-| Beinschutz | Stamina |
-| Stiefel | Fall Damage Reduction |
+| Chest | Weight |
+| Gloves | Crafting Speed |
+| Pants | Stamina |
+| Boots | Fall Damage Reduction |
 
-### Legend Riot — Boni
+### Legend Riot — Bonuses
 
-| Teil | Bonus |
-|------|-------|
+| Piece | Bonus |
+|-------|-------|
 | Helm | ×4 Health |
-| Brustpanzer | ×4 Torpor Resistance |
-| Handschuhe | ×4 Melee Damage |
-| Beinschutz | ×4 Stamina |
-| Stiefel | +25% Movement Speed |
+| Chest | ×4 Torpor Resistance |
+| Gloves | ×4 Melee Damage |
+| Pants | ×4 Stamina |
+| Boots | +25% Movement Speed |
 
 ---
 
-## 5. Taming — Torpor Referenz
+## 5. Taming — Torpor Reference
 
-> Werte gemessen an einem Bronto bei 100 % Waffe — variieren je nach Dino.  
-> **Formel:** `Basis-Torpor × (Waffe % ÷ 100)`
+> Values measured on a Bronto at 100% weapon — varies by dino.  
+> **Formula:** `Base Torpor × (Weapon % ÷ 100)`
 
 ### ADV Sniper Bullets (Fabricated Sniper)
 
-| Typ | Torpor |
-|-----|--------|
-| Potent | 2.100 |
-| Alpha | 4.600 |
-| Elemental | 8.600 |
-| Mythic | 13.000 |
-| Primal | 20.800 |
+| Type | Torpor |
+|------|--------|
+| Potent | 2,100 |
+| Alpha | 4,600 |
+| Elemental | 8,600 |
+| Mythic | 13,000 |
+| Primal | 20,800 |
 
 ### Tranq Darts (Longneck)
 
-| Typ | Torpor |
-|-----|--------|
-| Potent | 1.900 |
-| Alpha | 3.800 |
-| Elemental | 7.400 |
-| Mythic | 11.300 |
+| Type | Torpor |
+|------|--------|
+| Potent | 1,900 |
+| Alpha | 3,800 |
+| Elemental | 7,400 |
+| Mythic | 11,300 |
 
 ### Tranq Arrows (Crossbow)
 
-| Typ | Torpor |
-|-----|--------|
+| Type | Torpor |
+|------|--------|
 | Potent | 640 |
-| Alpha | 1.200 |
+| Alpha | 1,200 |
 
 ---
 
 ## 6. Admin Commands
 
-Cheats müssen zuerst mit dem Passwort aktiviert werden:
+Cheats must first be activated with the password:
 ```
-EnableCheats <Passwort>
+EnableCheats <Password>
 ```
 
-| Command | Funktion |
+| Command | Function |
 |---------|----------|
-| `admincheat DestroyWildDinos` | Alle wilden Dinos töten (spawnen danach neu) |
+| `admincheat DestroyWildDinos` | Kill all wild dinos (they respawn afterwards) |
 
 ---
 
-## 7. Server Einstellungen
+## 7. Server Settings
 
-### Engram Points pro Level
+### Engram Points per Level
 
-Sanfte Kurve — frühe Level geben weniger, Endgame skaliert moderat. **Total bei Max-Level (105): 9.200 Punkte.**
+Smooth curve — early levels give fewer points, endgame scales moderately. **Total at max level (105): 9,200 points.**
 
-| Level | Punkte/Level | Kumulativ |
+| Level | Points/Level | Cumulative |
 |-------|-------------|-----------|
 | 1–10 | 30 | 300 |
 | 11–20 | 50 | 800 |
-| 21–50 | 60 | 2.600 |
-| 51–60 | 80 | 3.400 |
-| 61–70 | 100 | 4.400 |
-| 71–90 | 120 | 6.800 |
-| 91–100 | 150 | 8.300 |
-| 101–105 | 180 | 9.200 |
+| 21–50 | 60 | 2,600 |
+| 51–60 | 80 | 3,400 |
+| 61–70 | 100 | 4,400 |
+| 71–90 | 120 | 6,800 |
+| 91–100 | 150 | 8,300 |
+| 101–105 | 180 | 9,200 |
 
-### Spieler Stats — pro Level-Up Multiplikator
+### Player Stats — Per Level-Up Multiplier
 
-| Attribut | Multiplikator | Hinweis |
-|----------|--------------|---------|
+| Attribute | Multiplier | Note |
+|-----------|-----------|------|
 | Health | ×2.0 | |
 | Stamina | ×2.0 | |
-| Weight | ×10.0 | sehr hoch — Inventar kaum ein Problem |
+| Weight | ×10.0 | Very high — inventory rarely a problem |
 | Melee Damage | ×2.0 | |
-| Movement Speed | ×2.0 | Speed-Leveling aktiv |
+| Movement Speed | ×1.5 | Speed leveling active |
 | Temp. Fortitude | ×5.0 | |
-| Crafting Speed | ×50.0 | |
-| Oxygen / Food / Water | ×1.0 | Standard |
+| Crafting Speed | ×20.0 | |
+| Oxygen / Food / Water | ×1.0 | Default |
 
-### Dino Stats — gezähmte Dinos pro Level-Up
+### Dino Stats — Tamed Dinos per Level-Up
 
-| Attribut | Multiplikator | Hinweis |
-|----------|--------------|---------|
-| Health | ×1.0 | Standard |
+| Attribute | Multiplier | Note |
+|-----------|-----------|------|
+| Health | ×1.0 | Default |
 | Stamina | ×2.0 | |
-| Weight | ×10.0 | Lastdinos tragen viel |
-| Alle anderen | ×1.0 | Standard |
+| Weight | ×10.0 | Pack dinos carry a lot |
+| All others | ×1.0 | Default |
 
-> Wilde Dinos bleiben auf Standard (×1.0) — maximale Schwierigkeit aktiv.
+> Wild dinos stay at default (×1.0) — maximum difficulty active.
 
 ### Breeding
 
-| Einstellung | Wert | Bedeutung |
-|-------------|------|-----------|
-| Paarungsintervall | ×0.1 | sehr schnell |
-| Ei schlüpfen | ×40 | sehr schnell |
-| Baby aufwachsen | ×40 | sehr schnell |
-| Imprint-Menge | ×10 | 100 % Imprint in wenigen Cuddles |
-| Ei-Legeintervall | ×0.25 | Eier kommen häufig |
+| Setting | Value | Meaning |
+|---------|-------|---------|
+| Mating Interval | ×0.1 | Very fast |
+| Egg Hatching | ×40 | Very fast |
+| Baby Maturing | ×40 | Very fast |
+| Imprint Amount | ×10 | 100% imprint in a few cuddles |
+| Egg Laying Interval | ×0.25 | Eggs come frequently |
 
-### XP Multiplikatoren
+### XP Multipliers
 
-| Quelle | Multiplikator |
-|--------|--------------|
-| Alle XP-Quellen | ×3 |
+| Source | Multiplier |
+|--------|-----------|
+| All XP sources | ×3 |
 
-### Welt & Gameplay
+### World & Gameplay
 
-| Einstellung | Wert | Bedeutung |
-|-------------|------|-----------|
-| Harvest-Menge | ×5 | |
-| Loot-Qualität Drops | ×1 | Standard |
-| Loot-Qualität Fischen | ×4 | |
-| Crafting Skill Bonus | ×25 | Handwerk lohnt sich stark |
+| Setting | Value | Meaning |
+|---------|-------|---------|
+| Harvest Amount | ×5 | |
+| Loot Quality Drops | ×1 | Default |
+| Loot Quality Fishing | ×4 | |
+| Crafting Skill Bonus | ×5 | |
 | Custom Recipe Skill | ×10 | |
-| Struktur-Schaden (PvP) | ×6 | Raiding geht deutlich schneller |
-| Turret-Schaden | ×2.5 | |
-| Respawn Interval | aktiv | erhöht sich mit jedem Tod |
-| Flyer Speed-Leveling | deaktiviert | |
-| Struktur-Kollision | deaktiviert | freies Bauen ohne Clip-Fehler |
-| Corpse Locator | aktiv | Leiche auf der Karte sichtbar |
-| Unlimited Respecs | aktiv | Engram-Punkte jederzeit zurücksetzen |
+| Structure Damage (PvP) | ×6 | Raiding is significantly faster |
+| Turret Damage | ×2.5 | |
+| Respawn Interval | Active | Increases with each death |
+| Flyer Speed Leveling | Disabled | |
+| Structure Collision | Disabled | Free building without clip errors |
+| Corpse Locator | Active | Corpse visible on map |
+| Unlimited Respecs | Active | Reset engram points at any time |
 
 ---
 
-## 8. Klassen-Referenz
+## 8. Class Reference
 
-Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der Game.ini.
+All known item class strings for `ConfigOverrideSupplyCrateItems` in Game.ini.
 
-> **Blueprint:** `bForceBlueprint=true` macht jeden Item-Eintrag zum Blueprint.  
-> **Qualität:** `MinQuality`/`MaxQuality` — 0.0 = Primitiv, 0.3 = Journeyman, 0.4 = Meisterwerk, 0.5+ = Aufgestiegen.
+> **Blueprint:** `bForceBlueprint=true` makes any item entry a Blueprint.  
+> **Quality:** `MinQuality`/`MaxQuality` — 0.0 = Primitive, 0.3 = Journeyman, 0.4 = Masterwork, 0.5+ = Ascendant.
 
 ---
 
 ### Drop Class Strings (Supply Crates)
 
-| Farbe | Normal | Double (mit Ring) |
+| Color | Normal | Double (with Ring) |
 |-------|--------|-------------------|
-| Weiß | `SupplyCrate_Level03_C` | `SupplyCrate_Level03_Double_C` |
-| Grün | `SupplyCrate_Level15_C` | `SupplyCrate_Level15_Double_C` |
-| Blau | `SupplyCrate_Level25_C` | `SupplyCrate_Level25_Double_C` |
-| Lila | `SupplyCrate_Level35_C` | `SupplyCrate_Level35_Double_C` |
-| Gelb | `SupplyCrate_Level45_C` | `SupplyCrate_Level45_Double_C` |
-| Rot | `SupplyCrate_Level60_C` | `SupplyCrate_Level60_Double_C` |
+| White | `SupplyCrate_Level03_C` | `SupplyCrate_Level03_Double_C` |
+| Green | `SupplyCrate_Level15_C` | `SupplyCrate_Level15_Double_C` |
+| Blue | `SupplyCrate_Level25_C` | `SupplyCrate_Level25_Double_C` |
+| Purple | `SupplyCrate_Level35_C` | `SupplyCrate_Level35_Double_C` |
+| Yellow | `SupplyCrate_Level45_C` | `SupplyCrate_Level45_Double_C` |
+| Red | `SupplyCrate_Level60_C` | `SupplyCrate_Level60_Double_C` |
 
 ---
 
-### Primal Chaos — XP Tränke
+### Primal Chaos — XP Potions
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Small XP Potion | `PrimalItemConsumable_XPSmall_C` |
 | Medium XP Potion | `PrimalItemConsumable_XPMedium_C` |
 | Large XP Potion | `PrimalItemConsumable_XPLarge_C` |
 | Max XP Potion | `PrimalItemConsumable_MaxXP_C` |
 
-### Primal Chaos — Gesundheitstränke
+### Primal Chaos — Health Potions
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Toxic Health Potion | `PrimalItemConsumable_ToxicHealthPotion_C` |
 | Alpha Health Potion | `PrimalItemConsumable_AlphaHealthPotion_C` |
 | Mythic Health Potion | `PrimalItemConsumable_MythicHealthPotion_C` |
@@ -315,8 +314,8 @@ Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der G
 
 ### Primal Chaos — ADV Sniper Bullets
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Potent ADV Sniper Bullet | `PrimalItemAmmo_AdvancedSniperBullet_Potent_C` |
 | Alpha ADV Sniper Bullet | `PrimalItemAmmo_AdvancedSniperBullet_Alpha_C` |
 | Elemental ADV Sniper Bullet | `PrimalItemAmmo_AdvancedSniperBullet_Elemental_C` |
@@ -325,16 +324,16 @@ Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der G
 
 ### Primal Chaos — Tranq Arrows
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Toxic Tranq Arrow | `PrimalItemAmmo_ArrowTranq_Toxic_C` |
 | Alpha Tranq Arrow | `PrimalItemAmmo_ArrowTranq_Alpha_C` |
 | Potent Tranq Arrow | `PrimalItemAmmo_ArrowTranq_Potent_C` |
 
 ### Primal Chaos — Tranq Darts
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Potent Tranq Dart | `PrimalItemAmmo_TranqDart_Potent_C` |
 | Alpha Tranq Dart | `PrimalItemAmmo_TranqDart_Alpha_C` |
 | Elemental Tranq Dart | `PrimalItemAmmo_TranqDart_Element_C` |
@@ -342,8 +341,8 @@ Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der G
 
 ### Primal Chaos — Compound Bow Arrows
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Potent Compound Bow Arrow | `PrimalItemAmmo_CompoundBowArrow_Potent_C` |
 | Alpha Compound Bow Arrow | `PrimalItemAmmo_CompoundBowArrow_Alpha_C` |
 | Elemental Compound Bow Arrow | `PrimalItemAmmo_CompoundBowArrow_Elemental_C` |
@@ -352,111 +351,111 @@ Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der G
 
 ---
 
-### Primal Chaos — Flak Rüstung (Alpha-Tier)
+### Primal Chaos — Flak Armor (Alpha Tier)
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Alpha Metal Helm | `PrimalItemArmor_MetalHelmet_Alpha_C` |
 | Alpha Metal Shirt | `PrimalItemArmor_MetalShirt_Alpha_C` |
-| Alpha Metal Handschuhe | `PrimalItemArmor_MetalGloves_Alpha_C` |
-| Alpha Metal Hose | `PrimalItemArmor_MetalPants_Alpha_C` |
-| Alpha Metal Stiefel | `PrimalItemArmor_MetalBoots_Alpha_C` |
+| Alpha Metal Gloves | `PrimalItemArmor_MetalGloves_Alpha_C` |
+| Alpha Metal Pants | `PrimalItemArmor_MetalPants_Alpha_C` |
+| Alpha Metal Boots | `PrimalItemArmor_MetalBoots_Alpha_C` |
 
-### Primal Chaos — Flak Rüstung (Volcanic/Elemental-Tier)
+### Primal Chaos — Flak Armor (Volcanic/Elemental Tier)
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Volcanic Metal Helm | `PrimalItemArmor_MetalHelmet_Volcanic_C` |
 | Volcanic Metal Shirt | `PrimalItemArmor_MetalShirt_Volcanic_C` |
-| Volcanic Metal Handschuhe | `PrimalItemArmor_MetalGloves_Volcanic_C` |
-| Volcanic Metal Hose | `PrimalItemArmor_MetalPants_Volcanic_C` |
-| Volcanic Metal Stiefel | `PrimalItemArmor_MetalBoots_Volcanic_C` |
+| Volcanic Metal Gloves | `PrimalItemArmor_MetalGloves_Volcanic_C` |
+| Volcanic Metal Pants | `PrimalItemArmor_MetalPants_Volcanic_C` |
+| Volcanic Metal Boots | `PrimalItemArmor_MetalBoots_Volcanic_C` |
 
-### Primal Chaos — Flak Rüstung (Mythic-Tier)
+### Primal Chaos — Flak Armor (Mythic Tier)
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Mythic Metal Helm | `PrimalItemArmor_MetalHelmet_Mythic_C` |
 | Mythic Metal Shirt | `PrimalItemArmor_MetalShirt_Mythic_C` |
-| Mythic Metal Handschuhe | `PrimalItemArmor_MetalGloves_Mythic_C` |
-| Mythic Metal Hose | `PrimalItemArmor_MetalPants_Mythic_C` |
-| Mythic Metal Stiefel | `PrimalItemArmor_MetalBoots_Mythic_C` |
+| Mythic Metal Gloves | `PrimalItemArmor_MetalGloves_Mythic_C` |
+| Mythic Metal Pants | `PrimalItemArmor_MetalPants_Mythic_C` |
+| Mythic Metal Boots | `PrimalItemArmor_MetalBoots_Mythic_C` |
 
 ---
 
-### Primal Chaos — Riot Rüstung (Legend-Tier)
+### Primal Chaos — Riot Armor (Legend Tier)
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Legend Riot Helm | `PrimalItemArmor_RiotHelmet_Legend_C` |
 | Legend Riot Shirt | `PrimalItemArmor_RiotShirt_Legend_C` |
-| Legend Riot Handschuhe | `PrimalItemArmor_RiotGloves_Legend_C` |
-| Legend Riot Hose | `PrimalItemArmor_RiotPants_Legend_C` |
-| Legend Riot Stiefel | `PrimalItemArmor_RiotBoots_Legend_C` |
+| Legend Riot Gloves | `PrimalItemArmor_RiotGloves_Legend_C` |
+| Legend Riot Pants | `PrimalItemArmor_RiotPants_Legend_C` |
+| Legend Riot Boots | `PrimalItemArmor_RiotBoots_Legend_C` |
 
 ---
 
-### Primal Chaos — Hide Toxic Rüstung (Starter-Tier)
+### Primal Chaos — Hide Toxic Armor (Starter Tier)
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Toxic Hide Helm | `PrimalItemArmor_HideHelmet_Toxic_C` |
 | Toxic Hide Shirt | `PrimalItemArmor_HideShirt_Toxic_C` |
-| Toxic Hide Handschuhe | `PrimalItemArmor_HideGloves_Toxic_C` |
-| Toxic Hide Hose | `PrimalItemArmor_HidePants_Toxic_C` |
-| Toxic Hide Stiefel | `PrimalItemArmor_HideBoots_Toxic_C` |
+| Toxic Hide Gloves | `PrimalItemArmor_HideGloves_Toxic_C` |
+| Toxic Hide Pants | `PrimalItemArmor_HidePants_Toxic_C` |
+| Toxic Hide Boots | `PrimalItemArmor_HideBoots_Toxic_C` |
 
 ---
 
-### Primal Chaos — Werkzeuge (Metal Pick)
+### Primal Chaos — Tools (Metal Pick)
 
-| Tier | Klassenname |
-|------|-------------|
+| Tier | Class Name |
+|------|-----------|
 | Toxic | `PrimalItem_WeaponMetalPick_Toxic_C` |
 | Alpha | `PrimalItem_WeaponMetalPick_Alpha_C` |
 | Volcanic | `PrimalItem_WeaponMetalPick_Volcanic_C` |
 | Mythic | `PrimalItem_WeaponMetalPick_Mythic_C` |
 
-### Primal Chaos — Werkzeuge (Metal Hatchet)
+### Primal Chaos — Tools (Metal Hatchet)
 
-| Tier | Klassenname |
-|------|-------------|
+| Tier | Class Name |
+|------|-----------|
 | Toxic | `PrimalItem_WeaponMetalHatchet_Toxic_C` |
 | Alpha | `PrimalItem_WeaponMetalHatchet_Alpha_C` |
 | Volcanic | `PrimalItem_WeaponMetalHatchet_Volcanic_C` |
 | Mythic | `PrimalItem_WeaponMetalHatchet_Mythic_C` |
 
-### Primal Chaos — Werkzeuge (Sichel / Sickle)
+### Primal Chaos — Tools (Sickle)
 
-| Tier | Klassenname |
-|------|-------------|
+| Tier | Class Name |
+|------|-----------|
 | Toxic | `PrimalItem_WeaponSickle_Toxic_C` |
 | Alpha | `PrimalItem_WeaponSickle_Alpha_C` |
 | Volcanic | `PrimalItem_WeaponSickle_Volcanic_C` |
 | Mythic | `PrimalItem_WeaponSickle_Mythic_C` |
 
-### Primal Chaos — Werkzeuge (Pike)
+### Primal Chaos — Tools (Pike)
 
-| Tier | Klassenname |
-|------|-------------|
+| Tier | Class Name |
+|------|-----------|
 | Toxic | `PrimalItem_WeaponPike_Toxic_C` |
 | Alpha | `PrimalItem_WeaponPike_Alpha_C` |
 | Volcanic | `PrimalItem_WeaponPike_Volcanic_C` |
 | Mythic | `PrimalItem_WeaponPike_Mythic_C` |
 
-### Primal Chaos — Ressourcen
+### Primal Chaos — Resources
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Element Metal Ingot | `PrimalItemResource_MetalIngot_Element_C` |
 | Toxic Metal Ingot | `PrimalItemResource_MetalIngot_Toxic_C` |
 | Alpha Metal Ingot | `PrimalItemResource_MetalIngot_Alpha_C` |
 | Mythic Metal Ingot | `PrimalItemResource_MetalIngot_Mythic_C` |
 
-### Primal Chaos — Strukturen
+### Primal Chaos — Structures
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Chaos Bed | `PrimalItemStructure_ChaosBed_C` |
 | Chaos Forge | `PrimalItemStructure_Forge_Chaos_C` |
 | Chaos Anvil Bench | `PrimalItemStructure_AnvilBench_Chaos_C` |
@@ -466,59 +465,59 @@ Alle bekannten Item Class Strings für `ConfigOverrideSupplyCrateItems` in der G
 
 ---
 
-### Vanilla ASA — Waffen
+### Vanilla ASA — Weapons
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Fabricated Sniper Rifle | `PrimalItem_WeaponMachinedSniper_C` |
 | Longneck Rifle | `PrimalItem_WeaponOneShotRifle_C` |
 | Crossbow | `PrimalItem_WeaponCrossbow_C` |
 | Pump-Action Shotgun | `PrimalItem_WeaponShotgun_C` |
 | Compound Bow | `PrimalItem_WeaponCompoundBow_C` |
 | Pike | `PrimalItem_WeaponPike_C` |
-| Sichel | `PrimalItem_WeaponSickle_C` |
+| Sickle | `PrimalItem_WeaponSickle_C` |
 | Bola | `PrimalItem_WeaponBola_C` |
 | Metal Pick | `PrimalItem_WeaponMetalPick_C` |
 | Metal Hatchet | `PrimalItem_WeaponMetalHatchet_C` |
 
-### Vanilla ASA — Munition & Verbrauchsgüter
+### Vanilla ASA — Ammo & Consumables
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | ADV Sniper Bullet | `PrimalItemAmmo_AdvancedSniperBullet_C` |
 | Tranq Arrow | `PrimalItemAmmo_ArrowTranq_C` |
 | Flame Arrow | `PrimalItemAmmo_ArrowFlame_C` |
 | Med Brew | `PrimalItemConsumable_HealSoup_C` |
 
-### Vanilla ASA — Flak Rüstung
+### Vanilla ASA — Flak Armor
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Metal Helm | `PrimalItemArmor_MetalHelmet_C` |
 | Metal Shirt | `PrimalItemArmor_MetalShirt_C` |
-| Metal Handschuhe | `PrimalItemArmor_MetalGloves_C` |
-| Metal Hose | `PrimalItemArmor_MetalPants_C` |
-| Metal Stiefel | `PrimalItemArmor_MetalBoots_C` |
+| Metal Gloves | `PrimalItemArmor_MetalGloves_C` |
+| Metal Pants | `PrimalItemArmor_MetalPants_C` |
+| Metal Boots | `PrimalItemArmor_MetalBoots_C` |
 
-### Vanilla ASA — Ressourcen
+### Vanilla ASA — Resources
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Polymer | `PrimalItemResource_Polymer_C` |
-| Zement (Cementing Paste) | `PrimalItemResource_ChitinPaste_C` |
-| Siliziumperlen (Silica Pearls) | `PrimalItemResource_Silicon_C` |
-| Öl | `PrimalItemResource_Oil_C` |
-| Stroh (Thatch) — Filler für Zufalls-Slots | `PrimalItemResource_Thatch_C` |
+| Cementing Paste | `PrimalItemResource_ChitinPaste_C` |
+| Silica Pearls | `PrimalItemResource_Silicon_C` |
+| Oil | `PrimalItemResource_Oil_C` |
+| Thatch — Filler for random slots | `PrimalItemResource_Thatch_C` |
 
-### Vanilla ASA — Strukturen
+### Vanilla ASA — Structures
 
-| Item | Klassenname |
-|------|-------------|
+| Item | Class Name |
+|------|-----------|
 | Metal Foundation | `PrimalItemStructure_MetalFloor_C` |
 | Metal Wall | `PrimalItemStructure_MetalWall_C` |
 | Metal Ceiling | `PrimalItemStructure_MetalCeiling_C` |
-| Dino Gateway (Rahmen) | `PrimalItemStructure_MetalGateframe_C` |
-| Dino Gate (Tür) | `PrimalItemStructure_MetalGate_C` |
+| Dino Gateway (Frame) | `PrimalItemStructure_MetalGateframe_C` |
+| Dino Gate (Door) | `PrimalItemStructure_MetalGate_C` |
 | Dedicated Storage | `PrimalItemStructure_DedicatedStorage_C` |
 | Industrial Forge | `PrimalItemStructure_IndustrialForge_C` |
 | Industrial Grinder | `PrimalItemStructure_Grinder_C` |
