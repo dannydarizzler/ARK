@@ -24,13 +24,13 @@
 |-----|-------------|
 | ARK Primal Chaos | Overhaul mod — fundamentally changes dinos, gameplay, and difficulty |
 | Awesome Spyglass | Extended spyglass with stat display for dinos |
-| Dino Depot | Dino management and storage |
-| A Simple Performance Mod (60 FPS) | Performance optimization for smoother gameplay |
-| Tribute Table | Allows redeeming tribute items |
 | Der Dino Finder | Helps locate all dinos on the map |
+| Dino Depot | Dino management and storage |
+| Better Breeding | Improved breeding UI and quality-of-life features |
 | TG Stacking Mod 1000-50 | Increases stack sizes to 1000 (weight reduced by 50%) |
+| A Simple Performance Mod (60 FPS) | Performance optimization for smoother gameplay |
 | Crash Protector | Protects players from dinos and drowning when they crash |
-| Upgrade Station | Allows upgrading items to higher quality tiers |
+| Tribute Table | Allows redeeming tribute items |
 
 ---
 
