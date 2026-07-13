@@ -72,20 +72,20 @@ Drops are structured progressively — the higher the drop color, the better the
 ### White — Starter Kit (fixed)
 | Variant | Contents | Quality |
 |---------|----------|---------|
-| Normal | Toxic Hide Armor (5 pieces) + 10 Bolas + Metal Pick + Metal Hatchet + 10 Med Brews | Primitive |
+| Normal | Toxic Hide Armor (5 pieces) + 10 Bolas + Toxic Pick + Toxic Hatchet + 10 Med Brews | Primitive |
 | Double | Everything from Normal + Crossbow + 20 Potent Tranq Arrows + 1–3 Small XP Potions | Primitive |
 
 ### Green — Resources (fixed)
 | Variant | Contents |
 |---------|----------|
-| Normal | 75–175× Polymer, Cementing Paste, Silica Pearls, Oil |
-| Double | 125–250× Polymer, Cementing Paste, Silica Pearls, Oil |
+| Normal | 50–125× Polymer, Cementing Paste, Silica Pearls, Oil |
+| Double | 75–200× Polymer, Cementing Paste, Silica Pearls, Oil |
 
 ### Blue — Alpha Tier (Pool: 1–5 / 3–7 Items)
 Guaranteed: Potent/Alpha Tranq Arrows (15–35) · Alpha Health Potion (2–5) · Medium XP Potion (2–5)
 
 **Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
-Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Flak Pants · Alpha Flak Boots · Alpha Pick · Alpha Hatchet · Alpha Sickle · Alpha Pike
+Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Flak Pants · Alpha Flak Boots · Alpha Pick · Alpha Hatchet · Alpha Sickle · Alpha Pike · Chainsaw
 
 *Normal: 1–5 random items from pool (no BPs) · Double: 3–7 random items from pool (20% BP chance)*
 
@@ -99,7 +99,7 @@ Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Fl
 Guaranteed: Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
 
 **Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
-Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Fab Sniper (Mastercraft)
+Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Fab Sniper (Mastercraft) · **Chainsaw (always Blueprint)**
 
 *Normal: 1–5 from pool (no BPs) · Double: Guaranteed Elemental ADV Sniper Bullets (8–24) + 1–5 from pool (20% BP chance)*
 
@@ -107,9 +107,16 @@ Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves ·
 Guaranteed: Mythic/Primal ADV Sniper Bullets random (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2) · Primal Compound Bow Arrows (8–25)
 
 **Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
-Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots
+Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots · Mythic Pick · Mythic Hatchet · Mythic Sickle · Mythic Pike · **Chainsaw (always Blueprint)**
 
 *Normal: 1–5 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow Blueprint added to pool (always BP)*
+
+### Boss Rewards (Element)
+
+| Map | Boss | Gamma | Beta | Alpha |
+|-----|------|-------|------|-------|
+| Ragnarok | Nunatak (Ice Wyvern) | 250 | 500 | 1,000 |
+| Valguero | Grendel | 250 | 500 | 1,000 |
 
 ---
 
