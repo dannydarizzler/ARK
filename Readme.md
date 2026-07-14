@@ -96,20 +96,25 @@ Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Fl
 | Double | 20× Metal Foundation + 30× Metal Wall + 20× Metal Ceiling + Dino Gateway + Dino Gate + 5× Dedicated Storage |
 
 ### Yellow — Volcanic Tier + Longneck (Pool: 1–5 Items)
-Guaranteed: Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
+Guaranteed (Normal): Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
 
-**Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
-Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Fab Sniper (Mastercraft) · **Chainsaw (always Blueprint)**
+**Gear Pool — Normal:**
+Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Chainsaw
 
-*Normal: 1–5 from pool (no BPs) · Double: Guaranteed Elemental ADV Sniper Bullets (8–24) + 1–5 from pool (20% BP chance)*
+**Gear Pool — Double (20% chance per item as Blueprint):**
+Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves · Volcanic Flak Pants · Volcanic Flak Boots · Volcanic Pick · Volcanic Hatchet · Volcanic Sickle · Volcanic Pike · Fab Sniper (Mastercraft) · Chainsaw
+
+> Fab Sniper droppt nur in Double-Crates — im Normal-Pool nicht enthalten.
+
+*Normal: 1–5 from pool (no BPs) · Double: Tranq Dart erhöht auf 15–35 + Guaranteed Elemental ADV Sniper Bullets (8–24) + 1–5 from pool (20% BP chance, keine Ausnahme für Chainsaw)*
 
 ### Red — Endgame Exclusives (Pool: 1–5 Items)
 Guaranteed: Mythic/Primal ADV Sniper Bullets random (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2) · Primal Compound Bow Arrows (8–25)
 
-**Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
-Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots · Mythic Pick · Mythic Hatchet · Mythic Sickle · Mythic Pike · **Chainsaw (always Blueprint)**
+**Gear Pool — Normal: item only | Double: 20% chance as Blueprint (keine Ausnahme für Chainsaw/Compound Bow):**
+Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots · Mythic Pick · Mythic Hatchet · Mythic Sickle · Mythic Pike · Chainsaw
 
-*Normal: 1–5 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow Blueprint added to pool (always BP)*
+*Normal: 1–5 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow zum Pool hinzugefügt (20% BP-Chance wie alle anderen Items)*
 
 ### Boss Rewards (Element)
 
