@@ -92,8 +92,8 @@ Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Fl
 ### Purple — Structures (fixed)
 | Variant | Contents |
 |---------|----------|
-| Normal | 10× Metal Foundation + 15× Metal Wall + 10× Metal Ceiling + Dino Gateway + Dino Gate + 3× Dedicated Storage |
-| Double | 20× Metal Foundation + 30× Metal Wall + 20× Metal Ceiling + Dino Gateway + Dino Gate + 5× Dedicated Storage |
+| Normal | 10× Metal Foundation + 15× Metal Wall + 10× Metal Ceiling + Dino Gateway + Dino Gate |
+| Double | 20× Metal Foundation + 30× Metal Wall + 20× Metal Ceiling + Dino Gateway + Dino Gate |
 
 ### Yellow — Volcanic Tier + Longneck (Pool: 1–5 Items)
 Guaranteed (Normal): Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
@@ -208,7 +208,14 @@ EnableCheats <Password>
 
 ## 7. Server Settings
 
-### Engram Points per Level
+### Engrams
+
+**Aktuell (seit 2026-07-14):** `bAutoUnlockAllEngrams=True` in `GameUserSettings.ini` ([ServerSettings]) — alle Engramme werden automatisch mit dem jeweiligen Level freigeschaltet, kein manuelles Erlernen über Engram-Punkte nötig.
+
+Die 105 `OverridePlayerLevelEngramPoints`-Zeilen (eine pro Level) wurden dafür aus beiden `Game.ini`-Dateien entfernt, da sie mit Auto-Unlock wirkungslos wären. In der `Game.ini` selbst steht dazu **kein** Kommentar/Vermerk (auf Wunsch entfernt, um jedes Risiko beim Parsen auszuschließen) — die vollständige Doku dazu lebt ausschließlich hier im Readme sowie in der Git-Historie.
+
+<details>
+<summary>Archiv: alte Engram-Punkte-Kurve (zum Wiederherstellen)</summary>
 
 Smooth curve — early levels give fewer points, endgame scales moderately. **Total at max level (105): 9,200 points.**
 
@@ -222,6 +229,10 @@ Smooth curve — early levels give fewer points, endgame scales moderately. **To
 | 71–90 | 120 | 6,800 |
 | 91–100 | 150 | 8,300 |
 | 101–105 | 180 | 9,200 |
+
+**Zum Reaktivieren:** `bAutoUnlockAllEngrams=True` aus `GameUserSettings.ini` entfernen und für jedes Level (1–105) eine Zeile `OverridePlayerLevelEngramPoints=<Wert>` gemäß obiger Tabelle in `Game.ini` (nach `BabyImprintAmountMultiplier=10`) einfügen — in aufsteigender Level-Reihenfolge, ohne Lücken.
+
+</details>
 
 ### Player Stats — Per Level-Up Multiplier
 
@@ -279,6 +290,7 @@ Smooth curve — early levels give fewer points, endgame scales moderately. **To
 | Structure Collision | Disabled | Free building without clip errors |
 | Corpse Locator | Active | Corpse visible on map |
 | Unlimited Respecs | Active | Reset engram points at any time |
+| Auto Unlock All Engrams | Active | Alle Engramme werden automatisch pro Level freigeschaltet |
 
 ---
 
