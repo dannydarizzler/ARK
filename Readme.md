@@ -69,6 +69,8 @@ Drops are structured progressively — the higher the drop color, the better the
 
 > **BP System:** Blueprints can **only appear in Double drops**. Each gear item in a Double drop pool has a **20% chance to be a Blueprint** instead of a finished item. Normal drops contain **no blueprints**.
 
+> **Ragnarok-Wüste:** Deathsands/Green Desert nutzen andere Crate-Klassen (Scorched-Earth-System). Seit 2026-07-15 gibt es dafür zusätzliche, inhaltsgleiche Overrides — nur auf Ragnarok, siehe [Abschnitt 8](#8-class-reference).
+
 ### White — Starter Kit (fixed)
 | Variant | Contents | Quality |
 |---------|----------|---------|
@@ -81,13 +83,13 @@ Drops are structured progressively — the higher the drop color, the better the
 | Normal | 50–125× Polymer, Cementing Paste, Silica Pearls, Oil |
 | Double | 75–200× Polymer, Cementing Paste, Silica Pearls, Oil |
 
-### Blue — Alpha Tier (Pool: 1–5 / 3–7 Items)
+### Blue — Alpha Tier (Pool: 3–8 / 3–11 Items)
 Guaranteed: Potent/Alpha Tranq Arrows (15–35) · Alpha Health Potion (2–5) · Medium XP Potion (2–5)
 
 **Gear Pool — Normal: item only | Double: 20% chance as Blueprint:**
 Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Flak Pants · Alpha Flak Boots · Alpha Pick · Alpha Hatchet · Alpha Sickle · Alpha Pike · Chainsaw
 
-*Normal: 1–5 random items from pool (no BPs) · Double: 3–7 random items from pool (20% BP chance)*
+*Normal: 3–8 random items from pool (no BPs) · Double: 3–11 random items from pool (20% BP chance)*
 
 ### Purple — Structures (fixed)
 | Variant | Contents |
@@ -95,7 +97,7 @@ Crossbow · Alpha Flak Helm · Alpha Flak Shirt · Alpha Flak Gloves · Alpha Fl
 | Normal | 10× Metal Foundation + 15× Metal Wall + 10× Metal Ceiling + Dino Gateway + Dino Gate |
 | Double | 20× Metal Foundation + 30× Metal Wall + 20× Metal Ceiling + Dino Gateway + Dino Gate |
 
-### Yellow — Volcanic Tier + Longneck (Pool: 1–5 Items)
+### Yellow — Volcanic Tier + Longneck (Pool: 3–8 Items)
 Guaranteed (Normal): Tranq Dart random Elemental/Alpha/Potent (10–20) · Elemental ADV Sniper Bullets (8–16) · Large XP Potion (2–5) · Mythic Health Potion (1–5)
 
 **Gear Pool — Normal:**
@@ -106,15 +108,15 @@ Longneck · Volcanic Flak Helm · Volcanic Flak Shirt · Volcanic Flak Gloves ·
 
 > Fab Sniper droppt nur in Double-Crates — im Normal-Pool nicht enthalten.
 
-*Normal: 1–5 from pool (no BPs) · Double: Tranq Dart erhöht auf 15–35 + Guaranteed Elemental ADV Sniper Bullets (8–24) + 1–5 from pool (20% BP chance, keine Ausnahme für Chainsaw)*
+*Normal: 3–8 from pool (no BPs) · Double: Tranq Dart erhöht auf 15–35 + Guaranteed Elemental ADV Sniper Bullets (8–24) + 3–8 from pool (20% BP chance, keine Ausnahme für Chainsaw)*
 
-### Red — Endgame Exclusives (Pool: 1–5 Items)
+### Red — Endgame Exclusives (Pool: 3–8 Items)
 Guaranteed: Mythic/Primal ADV Sniper Bullets random (8–25) · Max XP Potion (1–2) · Nightmare Health Potion (1–2) · Primal Compound Bow Arrows (8–25)
 
 **Gear Pool — Normal: item only | Double: 20% chance as Blueprint (keine Ausnahme für Chainsaw/Compound Bow):**
 Fab Sniper · Mythic Flak Helm · Mythic Flak Shirt · Mythic Flak Gloves · Mythic Flak Pants · Mythic Flak Boots · Legend Riot Helm · Legend Riot Shirt · Legend Riot Gloves · Legend Riot Pants · Legend Riot Boots · Mythic Pick · Mythic Hatchet · Mythic Sickle · Mythic Pike · Chainsaw
 
-*Normal: 1–5 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow zum Pool hinzugefügt (20% BP-Chance wie alle anderen Items)*
+*Normal: 3–8 from pool (no BPs) · Double: + Primal ADV Sniper Bullets guaranteed + Compound Bow zum Pool hinzugefügt (20% BP-Chance wie alle anderen Items) · 3–8 from pool*
 
 ### Boss Rewards (Element)
 
@@ -313,6 +315,39 @@ All known item class strings for `ConfigOverrideSupplyCrateItems` in Game.ini.
 | Purple | `SupplyCrate_Level35_C` | `SupplyCrate_Level35_Double_C` |
 | Yellow | `SupplyCrate_Level45_C` | `SupplyCrate_Level45_Double_C` |
 | Red | `SupplyCrate_Level60_C` | `SupplyCrate_Level60_Double_C` |
+
+### Ragnarok — Wüsten-Drops (Scorched-Earth-Klassen)
+
+**Nur in `Nitrado settings/Ragnarok/Game.ini`** (Stand 2026-07-15) — Valguero hat kein Cluster-Sync und wurde noch nicht angepasst.
+
+Ragnarok nutzt für die Deathsands/Green Desert eigene Supply-Crate-Klassen aus dem Scorched-Earth-Loot-System (`SupplyCrate_LevelXX_ScorchedEarth_C`), die von den Island-Klassen (`SupplyCrate_LevelXX_C`) nicht erfasst werden. Deshalb gibt es pro Farbe eine zusätzliche Zeile mit identischem Inhalt, nur der Class-String ist getauscht. SE nutzt andere Level-Stufen (03/15/30/45/55/70 statt 03/15/25/35/45/60) — Blau läuft daher auf SE-Stufe 30, Rot auf SE-Stufe 55.
+
+| Farbe | Normal (SE) | Double (SE) |
+|-------|--------|-------------------|
+| White | `SupplyCrate_Level03_ScorchedEarth_C` | `SupplyCrate_Level03_Double_ScorchedEarth_C` |
+| Green | `SupplyCrate_Level15_ScorchedEarth_C` | `SupplyCrate_Level15_Double_ScorchedEarth_C` |
+| Blue | `SupplyCrate_Level30_ScorchedEarth_C` | `SupplyCrate_Level30_Double_ScorchedEarth_C` |
+| Yellow | `SupplyCrate_Level45_ScorchedEarth_C` | `SupplyCrate_Level45_Double_ScorchedEarth_C` |
+| Red | `SupplyCrate_Level55_ScorchedEarth_C` | `SupplyCrate_Level55_Double_ScorchedEarth_C` |
+| Red (Level70) | `SupplyCrate_Level70_ScorchedEarth_C` | `SupplyCrate_Level70_Double_ScorchedEarth_C` |
+
+> **Level70** ist die höchste SE-Stufe (kein Island-Äquivalent) — bekommt 1:1 denselben Loot wie Rot (Level60/55).
+> **Purple (Strukturen, Level35)** hat kein SE-Äquivalent und wurde bewusst weggelassen — in der Wüste droppen keine Struktur-Crates.
+
+### Ragnarok — Rote Wüstenkisten & Deep-Sea-Crates (Level 80)
+
+**Nur in `Nitrado settings/Ragnarok/Game.ini`** (Stand 2026-07-15) — Valguero noch nicht angepasst.
+
+Die kleinen roten Kisten in der Ragnarok-Wüste (Lvl-80-Anforderung) sind technisch Deep-Sea-Loot-Crates, keine Sky-Drops — eigener Class-String, von den obigen Overrides nicht erfasst. Gleiche Klasse wird auch für normale Deep-Sea-Crates im Ozean verwendet.
+
+| Kiste | Class String |
+|-------|--------------|
+| Wüsten-Kiste (Ragnarok-Wüste) | `SupplyCrate_OceanInstant_High_C` |
+| Deep-Sea-Crate (Ozean) | `SupplyCrate_OceanInstant_C` |
+
+**Inhalt (beide Klassen identisch):** Immer genau **3 zufällige, garantierte Blueprints** (`bForceBlueprint=true`, keine 20%-Chance wie bei den anderen Double-Drops) aus einem gemeinsamen Pool von **37 Items** — alle Gear-Items, die auch in den Blue/Yellow/Red-Double-Pools als Blueprint droppen können (Alpha-, Volcanic-, Mythic-, Legend-Riot-Tier, Fab Sniper, Compound Bow, Chainsaw).
+
+> **Verifikation empfohlen:** Falls die Kisten weiterhin unmoddeten Loot zeigen, stimmt der Class-String u. U. nicht exakt für ASA — vor dem produktiven Einsatz mit einem auffälligen Test-Item (z. B. 100× Thatch) im Pool gegenchecken, ob der Override überhaupt greift.
 
 ---
 
